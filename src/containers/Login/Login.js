@@ -21,7 +21,7 @@ class Login extends Component {
   }
 
   state = {
-    isLogin: true 
+    isLogin: true
   }
 
   handleSubmit(e) {
@@ -36,20 +36,21 @@ class Login extends Component {
       const fieldsVal = (this.props.form.getFieldsValue());
       if (this.state.isLogin) {
         const creds = {
-          email: fieldsVal.login-email,
-          password: fieldsVal.login-email,
+          email: fieldsVal['login-email'],
+          password: fieldsVal['login-email'],
           type: 'login'
         }
+        dispatch(loginUser(creds, this.loginFaileCallback));
       }
       else {
         const creds = {
-          email: fieldsVal.sign-email,
-          password: fieldsVal.sign-password,
-          nickname: fieldsVal.text,
+          email: fieldsVal['sign-email'],
+          password: fieldsVal['sign-password'],
+          nickname: fieldsVal['text'],
           type: 'sign'
         }
+        dispatch(loginUser(creds, this.loginFaileCallback));
       }
-      dispatch(loginUser(creds, this.loginFaileCallback));
     });
   }
 
