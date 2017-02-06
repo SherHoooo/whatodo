@@ -8,11 +8,21 @@ export default {
   },
   users: {
     isFetching: false,
-    meta: {
-      total: 0,
-      perPage: 10,
-      page: 1
+    email: String,
+    nickname: String
+  },
+  data: {
+    tasks: {
+      data: [],
+      isFetching: false
     },
-    data: []
+    calendar: {
+      data: [],
+      isFetching: false
+    },
+    notice: {
+      data: [],
+      isFetching: false
+    }
   }
 };
