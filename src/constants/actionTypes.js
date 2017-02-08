@@ -3,13 +3,21 @@
 // auth.js
 export const USER = 'USER';
 export const LOGIN = 'LOGIN';
+export const SIGN = 'SIGN';
 
 export const CURRENT_USER_REQUEST = 'CURRENT_USER_REQUEST';
 export const CURRENT_USER_SUCCESS = 'CURRENT_USER_SUCCESS';
 
 // task数据相关
 export const TASK = {
-  GETDATA: 'GET_TASK_DATA'
+  GETDATA: 'GET_TASK_DATA',
+  ADDTASK: 'ADD_TASK',
+  ADDLIST: 'ADD_LIST',
+  DELLIST: 'DEL_LIST',
+  DELALLTASK: 'DEL_ALL_TASK',
+  CHANGESTATUS: 'CHANGE_STATUS',
+  RENAMELIST: 'RENAME_LIST',
+  DELTASK: 'DEL_TASK'
 }
 
 

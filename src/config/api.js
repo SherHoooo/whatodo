@@ -12,7 +12,15 @@ export const API_CONFIG = {
   baseUri: baseUri,
   auth: 'auth',
   users: 'users',
+  sign: 'sign',
   tasks: {
-    getData: 'tasksdata'
+    getData: 'tasksdata',
+    addTask: 'addtask',
+    addList: 'addlist',
+    delList: 'dellist',
+    delAllTask: 'delalltask',
+    changeStatus: 'changestatus',
+    renameList: 'renamelist',
+    delTask: 'deltask'
   }
 };

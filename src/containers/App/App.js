@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import Login from './../Login/Login';
 import { Link } from 'react-router';
 import './App.scss';
 import { Menu, Dropdown, Icon, Popover, Input} from 'antd';
@@ -82,12 +81,6 @@ class App extends Component {
                 <Icon type="plus-circle-o" />
               </Popover>
             </li>
-            <li className="user-menu">
-              <Dropdown overlay={userMenu} trigger={['click']}>
-                <a className="ant-dropdown-link" href="#"></a>
-              </Dropdown>
-            </li>
-
           </ul>
         </header>
         <div className="main-contain">
@@ -98,10 +91,9 @@ class App extends Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props;
     return (
       <div>
-        {isAuthenticated? this.renderAuthenticatedPage() : <Login/>}
+        {this.renderAuthenticatedPage()}
       </div>
     );
   }
@@ -109,7 +101,6 @@ class App extends Component {
 
 function mapStateToProps(state) {
   const { routing, auth: { isAuthenticated, user } } = state;
-  console.log(state)
   return {
     isAuthenticated, user,routing
   };

@@ -13,16 +13,16 @@
       text-align: center;
       box-sizing: border-box;
       transition: border-left .2s ease;
-      &.important {
+      &.task-important {
         border-left: 4px solid  #FFAF38;
       }
-      &.urgent {
+      &.task-urgent {
         border-left: 4px solid #FF4F3E;
       }
-      &.important:hover {
+      &.task-important:hover {
         border-left: 8px solid  #FFAF38;
       }
-      &.urgent:hover {
+      &.task-urgent:hover {
         border-left: 8px solid  #FF4F3E;
       }
       & > div {
@@ -34,9 +34,10 @@
         vertical-align: top;
         text-align: left;
         margin-top: 2px;
+        padding-left: 12px;
       }
       .task-title {
-        width: 75%;
+        width: 70%;
         word-wrap: break-word;
         line-height: 22px;
         font-size: 14px;
@@ -49,14 +50,25 @@
           line-height: 1;
           color: #FFF;
           background-color: #3DA8F5;
-          text-decoration: none;
         }
+      }
+      .task-delete {
+        width: 15%;
+        text-align: center;
+        font-size: 16px;
+        vertical-align: top;
       }
     }
     .task-item.done {
       background-color: rgb(230,230,230);
       .task-title {
-        text-decoration: line-through;
+        .task-title-content{
+          text-decoration: line-through;
+        }
+        .deadline {
+          background-color: rgb(210,210,210);
+          color: rgb(150,150,150)
+        }
       }
     }
   }

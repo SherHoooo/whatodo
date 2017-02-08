@@ -1,18 +1,19 @@
 var express = require('express')
 var mongoose = require('mongoose')
 var bodyParser = require('body-parser')
-var session = require('express-session')
+var cookieParser = require('cookie-parser')
+// var session = require('express-session')
 // var mongoStore = require('connect-mongo')(session)
 var logger = require('morgan');
 var multipart = require('connect-multiparty')
 var app = express()
 var fs = require('fs')
 var path = require('path')
-var dbUrl = 'mongodb://127.0.0.1/blog'
+var dbUrl = 'mongodb://127.0.0.1/whatodo'
 
 
 //连接数据库
-// mongoose.connect(dbUrl)
+mongoose.connect(dbUrl)
 
 //常，变量定义
 var port = 9020
@@ -40,9 +41,12 @@ var walk = function(path) {
 //中间件使用
 app.use(express.static(path.join(__dirname, 'public' )))
 app.use(multipart())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(cookieParser())
+app.use(bodyParser.json({ type: 'text/plain' }));
+app.use(bodyParser.urlencoded({extended: false}))
 // app.use(session({
-//     secret: 'blog',
+//     secret: 'whatodoapp',
+//     key: 'sid',
 //     store: new mongoStore({
 //         url: dbUrl,
 //         collection: 'sessions'

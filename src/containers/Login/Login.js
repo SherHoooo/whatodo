@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Form, Input, Button } from 'antd';
-import { loginUser } from './../../actions/auth';
+import { loginUser, signUser} from './../../actions/auth';
 
 import './Login.scss';
 
@@ -37,7 +37,7 @@ class Login extends Component {
       if (this.state.isLogin) {
         const creds = {
           email: fieldsVal['login-email'],
-          password: fieldsVal['login-email'],
+          password: fieldsVal['login-password'],
           type: 'login'
         }
         dispatch(loginUser(creds, this.loginFaileCallback));
@@ -49,7 +49,7 @@ class Login extends Component {
           nickname: fieldsVal['text'],
           type: 'sign'
         }
-        dispatch(loginUser(creds, this.loginFaileCallback));
+        dispatch(signUser(creds, this.loginFaileCallback));
       }
     });
   }
@@ -156,7 +156,7 @@ class Login extends Component {
             <FormItem hasFeedback>
               <Input
                 {...signEmailProps}
-                placeholder="请输入登录邮箱"
+                placeholder="请输入注册邮箱"
                 type="email"
               />
             </FormItem>
