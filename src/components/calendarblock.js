@@ -3,22 +3,10 @@ import React from 'react';
 // 引入UI组件
 import { Calendar } from 'antd'
 
-// import './taskItem.scss'
-
 class CalendarBlock extends React.Component {
   constructor(props) {
     super(props);
     this.dateCellRender = this.dateCellRender.bind(this)
-    this.state = {
-      data: {
-        '2017210': [{
-          title: '哈哈哈哈',
-          priority: 1,
-          status: 2,
-          id: 'fdafda'
-        }]
-      }
-    }
   }
   dateCellRender(val) {
     const date = new Date(val.time).getDate()

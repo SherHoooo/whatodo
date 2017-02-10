@@ -11,7 +11,7 @@ const login = reducersGenerate(LOGIN, initialState.auth, {
   },
   'LOGIN_FULFILLED': (state, action) => {
     if (action.payload.status === 200) {
-      window.location.href="task"
+      window.location.href="/task"
       return Object.assign({}, state, {
         isFetching: false,
         isAuthenticated: true
@@ -41,7 +41,7 @@ const sign = reducersGenerate(SIGN, initialState.auth, {
   },
   'SIGN_FULFILLED': (state, action) => {
     if (action.payload.status === 200) {
-      window.location.href="task"
+      window.location.href="/task"
       return Object.assign({}, state, {
         isFetching: false,
         isAuthenticated: true

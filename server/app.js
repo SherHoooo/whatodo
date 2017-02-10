@@ -39,7 +39,7 @@ var walk = function(path) {
 }
 
 //中间件使用
-app.use(express.static(path.join(__dirname, 'public' )))
+app.use(express.static(path.join(__dirname, 'dist' )))
 app.use(multipart())
 app.use(cookieParser())
 app.use(bodyParser.json({ type: 'text/plain' }));
@@ -63,6 +63,18 @@ if('development' === app.get('env')) {
 
 //路由引入
 require('./config/routes')(app)
+
+app.get('/task', function (req, res){
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
+
+app.get('/calendar', function (req, res){
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
+
+app.get('/notice', function (req, res){
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
 
 app.listen(port, function () {
     console.log('Listening on port' + port)
