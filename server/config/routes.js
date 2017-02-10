@@ -19,4 +19,7 @@ module.exports = function(app) {
     app.post(VISION + '/addtask', Task.save)
     app.post(VISION + '/changestatus', Task.save)
     app.post(VISION + '/deltask', Task.del)
+
+    // Calendar
+    app.get(VISION + '/calendardata', Task.calendar)
 }

@@ -22,5 +22,8 @@ export const API_CONFIG = {
     changeStatus: 'changestatus',
     renameList: 'renamelist',
     delTask: 'deltask'
+  },
+  calendar: {
+    getData: 'calendardata'
   }
 };

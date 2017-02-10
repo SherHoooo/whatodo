@@ -1,0 +1,35 @@
+.events {
+  line-height: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.events li {
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  &.event-important {
+    color: #FFAF38;
+  }
+
+  &.event-normal {
+    color: #000;
+  }
+
+  &.event-urgent {
+    color: #FF4F3E;
+  }
+}
+
+.events li span {
+  vertical-align: middle;
+}
+
+.events li span:first-child {
+  font-size: 12px;
+  margin-right: 4px;
+}
+

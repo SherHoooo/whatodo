@@ -5,8 +5,15 @@ var ObjectId = Schema.Types.ObjectId
 var TaskSchema = new Schema({
     title: String,
     deadline: String,
-    priority: Number,
+    priority: {
+        type: Number,
+        default: 0
+    },
     status: Number,
+    user: {
+        type: ObjectId,
+        ref: "User"
+    },
     meta: {
         createAt: {
             type: Date,

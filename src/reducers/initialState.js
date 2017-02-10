@@ -17,7 +17,7 @@ export default {
       isFetching: false
     },
     calendar: {
-      data: [],
+      data: {},
       isFetching: false
     },
     notice: {

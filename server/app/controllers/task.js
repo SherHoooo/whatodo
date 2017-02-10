@@ -8,7 +8,6 @@ exports.save = function(req, res) {
         var status = parseInt(req.body.status)
         var taskIndex = req.body.taskindex
         var listIndex = req.body.listindex
-        console.log('这里是改变状态'+taskId)
         Task.findById(taskId, function(err, task) {
             if(err) {
                 console.log(err)
@@ -34,6 +33,7 @@ exports.save = function(req, res) {
             deadline: req.body.deadline,
             priority: req.body.priority,
             status: req.body.status,
+            user: req.body.user
         }
         var userId = req.body.user
         var listId = req.body.listid
@@ -87,4 +87,40 @@ exports.del = function(req, res) {
             })
         }
     })
+}
+
+// 日历数据
+exports.calendar = function(req, res) {
+    var userId = req.query.user
+    Task.find({user: userId}, function(err, tasks) {
+        var calendarData = {}
+        tasks.map(function(val) {
+            var deadline = val.deadline || val.meta.createAt
+            deadline = new Date(deadline)
+            var date = deadline.getDate()
+            var month = deadline.getMonth() + 1
+            var year = deadline.getFullYear()
+            var prop = '' + year + month + date 
+            if (calendarData[prop]) calendarData[prop].push({
+                title: val.title,
+                status: val.status,
+                priority: val.priority,
+                id: val._id
+            })
+            else {
+                calendarData[prop] = [{
+                    id: val._id,
+                    title: val.title,
+                    status: val.status,
+                    priority: val.priority
+                }]
+            }
+        })
+        res.json({
+                "message": "success",
+                "data": calendarData,
+                "status": 200
+            })
+    })
+
 }
