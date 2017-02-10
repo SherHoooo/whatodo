@@ -3,8 +3,8 @@
 ![任务页](http://upload-images.jianshu.io/upload_images/2400052-550637524d1ad0fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 介绍
-这是我的一个**React-Redux-webpack**的应用。练手之作，多有不足，请多包含:flushed:。
-这个项目包含了*react*、*redux*、*react-router*等多方面的知识，可以说给我的收获颇多:muscle:。
+这是我的一个**React-Redux-webpack**的应用。练手之作，多有不足，请多包涵:flushed:。
+这个项目包含了*react*、*redux*、*react-router*等多方面的知识，可以说给我的收获颇多。
 
 -------------
 ### 开始
